@@ -1,17 +1,10 @@
-//
-//  ViewController.swift
-//  HW6
-//
-//  Created by Данила Братинов on 04.11.2022.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 
 
