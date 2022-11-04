@@ -1,15 +1,16 @@
 import UIKit
 
-class SecondViewController: UIViewController {
+class WelcomeViewController: UIViewController {
     
     @IBOutlet var welcomeLabel: UILabel!
     
     var userName: String!
     var password: String!
+    let clear = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomeLabel.text = "Welcome, \(userName ?? "")"
+        welcomeLabel.text = "Welcome, \(userName ?? "") 👋"
     }
     
     @IBAction func logOutButton() {
