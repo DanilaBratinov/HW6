@@ -6,11 +6,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var userNameTF: UITextField!
     
     private let information = User(person: Person())
-    
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    //        guard let welcomeVC = segue.destination as? WelcomeViewController else { return }
-    //        welcomeVC.user = userName
-    //    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let tabBarVC = segue.destination as? UITabBarController else { return }
         guard let viewController = tabBarVC.viewControllers else { return }
