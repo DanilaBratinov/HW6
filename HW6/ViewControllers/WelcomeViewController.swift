@@ -4,13 +4,10 @@ class WelcomeViewController: UIViewController {
     
     @IBOutlet var welcomeLabel: UILabel!
     
-    var userName: String!
-    var password: String!
-    let clear = ""
-    
+    var user: String!
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomeLabel.text = "Welcome, \(userName ?? "") 👋"
+        welcomeLabel.text = "Welcome, \(user ?? "None") 👋"
     }
     
     @IBAction func logOutButton() {
