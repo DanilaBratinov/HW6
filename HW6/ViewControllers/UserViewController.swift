@@ -14,8 +14,9 @@ class UserViewController: UIViewController {
     
     
     private func setInformation() {
-        let information = User(person: Person())
         
+        let information = User.getUserData()
+        title = ("\(information.person.name) \(information.person.surname)")
         nameLabel.text = information.person.name
         surnameLabel.text = information.person.surname
         companyLabel.text = information.person.company

@@ -5,13 +5,13 @@ class LoginViewController: UIViewController {
     @IBOutlet var passwordTF: UITextField!
     @IBOutlet var userNameTF: UITextField!
     
-    private let information = User(person: Person())
+    private let user = User.getUserData()
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let tabBarVC = segue.destination as? UITabBarController else { return }
         guard let viewController = tabBarVC.viewControllers else { return }
         if let firstVC = viewController.first as? WelcomeViewController {
-            firstVC.user = information.person.name
+            firstVC.user = user.person.name
         }
     }
     
@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
     //MARK: - IB Action
     
     @IBAction func logInButton() {
-        guard userNameTF.text == information.login, passwordTF.text == information.password else {
+        guard userNameTF.text == user.login, passwordTF.text == user.password else {
             showAlert(
                 withTitle: "Invalid Login or Password",
                 andMessage: "Pleace, enter correct login or password"
@@ -33,8 +33,8 @@ class LoginViewController: UIViewController {
     }
     @IBAction func forgotRegisterData(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(withTitle: "Oops!", andMessage: "Your name is \(information.login)")
-        : showAlert(withTitle: "Oops!", andMessage: "Your password is \(information.password)")
+        ? showAlert(withTitle: "Oops!", andMessage: "Your name is \(user.login)")
+        : showAlert(withTitle: "Oops!", andMessage: "Your password is \(user.password)")
     }
     //MARK: - prepare - unwind
     

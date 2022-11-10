@@ -1,12 +1,29 @@
 struct User {
-    let login = "User"
-    let password = "123"
+    let login: String
+    let password: String
     let person: Person
+    
+    static func getUserData() -> User {
+        User(
+            login: "User",
+            password: "123",
+            person: Person.getPerson()
+        )
+        
+    }
 }
 
 struct Person {
-    let name = "Данила"
-    let surname = "Братинов"
-    let company = "Сегодня уволился"
-    let mood = "Теперь счастлив, как никогда"
+    let name: String
+    let surname: String
+    let company: String
+    let mood: String
+    
+    static func getPerson() -> Person {
+        Person(
+            name: "Данила",
+            surname: "Братинов",
+            company: "Нет",
+            mood: "Счастлив")
+    }
 }

@@ -1,9 +1,9 @@
 import UIKit
 
 class BioViewController: UIViewController {
-let information = User(person: Person())
+    let information = User.getUserData()
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = ("Danila Bratinov Bio")
+        title = ("\(information.person.name) \(information.person.surname) Bio")
     }
 }
